@@ -3,11 +3,20 @@ python:
     - "2.7"
 
 before_install:
-    - sudo apt-get update
-    - sudo apt-get install python-matplotlib
+    - if [ ${TRAVIS_PYTHON_VERSION:0:1} == "2" ]; then wget http://repo.continuum.io/miniconda/Miniconda-3.3.0-Linux-x86_64.sh -O miniconda.sh; else wget http://repo.continuum.io/miniconda/Miniconda3-3.3.0-Linux-x86_64.sh -O miniconda.sh; fi
+    - chmod +x miniconda.sh
+    - ./miniconda.sh -b
+    - export PATH=/home/travis/anaconda/bin:$PATH
+    - conda update --yes conda
+
+    # The next couple lines fix a crash with multiprocessing on Travis and are
+    # not specific to using Miniconda
+    - sudo rm -rf /dev/shm
+    - sudo ln -s /run/shm /dev/shm
 
 
 install:
+    - conda install --yes python=$TRAVIS_PYTHON_VERSION atlas numpy matplotlib
     - "pip install sphinx sphinx_bootstrap_theme"
     - "pip install ."
 
