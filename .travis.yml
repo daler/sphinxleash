@@ -10,3 +10,4 @@ install:
     - "pip install ."
 
 script: sphinx-doctests
+
