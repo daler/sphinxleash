@@ -9,5 +9,5 @@ before_install:
 install:
     - "pip install ."
 
-script: sphinx-doctests
+script: bash sphinx-doctests
 
