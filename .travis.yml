@@ -6,7 +6,9 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install python-matplotlib
 
+
 install:
+    - "pip install sphinx sphinx_bootstrap_theme"
     - "pip install ."
 
 script: bash sphinx-doctests
