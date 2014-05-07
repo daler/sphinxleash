@@ -1,1 +1,6 @@
 *.pyc
+doc/build
+dist
+doc/advanced-example
+doc/simple-example
+
