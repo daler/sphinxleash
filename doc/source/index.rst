@@ -51,6 +51,9 @@ Simple example
     if os.path.exists('advanced-example'):
         os.system('rm -r advanced-example')
 
+    import matplotlib
+    matplotlib.use("Agg")
+
 
 Create a new project
 ~~~~~~~~~~~~~~~~~~~~
