@@ -3,4 +3,4 @@ doc/build
 dist
 doc/advanced-example
 doc/simple-example
-
+sphinxleash.egg-info

@@ -1,4 +1,5 @@
 import string
+import six
 import tempfile
 import os
 from sphinx import quickstart
@@ -93,10 +94,6 @@ class Project(object):
         Uses the currently-configured options in self.conf_dict and
         self.quickstart_params.
         """
-        if silent:
-            log = tempfile.NamedTemporaryFile(delete=False)
-            orig_stdout = sys.stdout
-            sys.stdout = log
 
         defaults = quickstart_defaults.copy()
 
@@ -115,8 +112,6 @@ class Project(object):
             self.conf_fn = os.path.join(self.source_dir, 'conf.py')
             helpers.update_conf(self.conf_fn, self.conf_dict)
 
-        if silent:
-            sys.stdout = orig_stdout
 
 
     def add_page(self, template, filename, context=None, top=None, maxdepth=3,
@@ -188,7 +183,7 @@ class Project(object):
         """
         if rules is None:
             rules = []
-        if isinstance(rules, basestring):
+        if isinstance(rules, six.string_types):
             rules = [rules]
         cmds = [
             '(cd', self.dirname, '&&', 'make']

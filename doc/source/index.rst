@@ -81,6 +81,14 @@ First, let's configure and initialize a project:
     project = sphinxleash.Project(dirname='simple-example')
     project.create_new()
 
+.. testoutput::
+
+    Creating file simple-example/conf.py.
+    Creating file simple-example/index.rst.
+    Creating file simple-example/Makefile.
+    Creating file simple-example/make.bat.
+
+
 Write templates
 ~~~~~~~~~~~~~~~
 
@@ -275,6 +283,12 @@ after it's initially created.
     # Populate the project with initial files, and make overrides to conf.py
     project.create_new()
 
+.. testoutput::
+
+    Creating file advanced-example/conf.py.
+    Creating file advanced-example/index.rst.
+    Creating file advanced-example/Makefile.
+    Creating file advanced-example/make.bat.
 
 Layout and CSS customization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
