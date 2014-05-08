@@ -4,7 +4,8 @@
 wget http://repo.continuum.io/miniconda/Miniconda3-3.4.2-Linux-x86_64.sh -O miniconda.sh
 bash miniconda.sh -b
 
-export PATH=$HOME/miniconda/bin:$PATH
+export PATH=$HOME/miniconda3/bin:$PATH
+echo "${PATH}"
 
 # the $python var is set from the env:matrix entries in .travis.yml.
 conda create --yes -n ${python} python=${python} numpy matplotlib
