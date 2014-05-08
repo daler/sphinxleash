@@ -3,9 +3,9 @@ import tempfile
 import os
 from sphinx import quickstart
 from textwrap import dedent
-import helpers
-from helpers import underline
-from version import __version__
+from . import helpers
+from .helpers import underline
+from .version import __version__
 import sys
 
 quickstart_defaults = {
