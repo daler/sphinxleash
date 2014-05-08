@@ -25,3 +25,6 @@ source activate $python
 echo Using pip at: $(which pip)
 pip install sphinx sphinx_bootstrap_theme
 pip install .
+
+# Disable the verbosity for downstream travis stuff.
+set +vx
