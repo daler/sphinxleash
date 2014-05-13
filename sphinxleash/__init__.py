@@ -159,7 +159,7 @@ class Project(object):
         dirname = self.source_dir
 
         p = Page(template, filename, dirname=dirname, context=context,
-                 maxdepth=3)
+                 maxdepth=maxdepth)
 
         try:
             page = self.pages[top]
