@@ -45,6 +45,13 @@ quickstart_defaults = {
 
     # suffix to use for source files
     'suffix': '.rst',
+
+    # later versions of sphinx include these as defaults (see
+    # sphinx/quickstart.DEFAULT_VALUE
+    'language': None,
+    'ext_autodoc': False,
+    'ext_doctest': False,
+    'ext_todo': False,
 }
 
 
