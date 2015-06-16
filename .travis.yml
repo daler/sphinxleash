@@ -29,7 +29,6 @@ install:
     - source activate test-environment
     - pip install sphinx sphinx_bootstrap_theme
     - pip install .
-    - "sudo rm -rf /dev/shm && sudo ln -Tsf /run/shm /dev/shm"
 
 script: bash sphinx-doctests
 
